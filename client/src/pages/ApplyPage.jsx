@@ -33,7 +33,11 @@ function ApplyPage() {
     // alert("fwrfeffw");
     try {
       // alert("fwrfeffw");
-      const response = await axios.post('/api/applicant/saveFranApp', formData);
+      const response = await axios.post("http://localhost:5000/api/endpoint", formData, {
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
       // alert("fwrfeffw");
       if (response.data.status) {
         setMessage('Application submitted successfully!');
